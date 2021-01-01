@@ -3,30 +3,22 @@
 
 using namespace std;
 
-int main(int argc, const char** argv) {
+int main(int argc, const char **argv)
+{
   queue<int> q;
   int num;
-  bool backFlag = false;
   cin >> num;
 
-  for(int i=1; i <= num; ++i)
+  for (int i = 1; i <= num; ++i)
   {
     q.push(i);
   }
-  
-  while(q.size() > 1)
-  {    
-    if(!backFlag)
-    {      
-      q.pop();      
-    }
-    else
-    {
-      q.push(q.front());
-      q.pop();
-    }
 
-    backFlag = !backFlag;
+  while (q.size() > 1)
+  {
+    q.pop();
+    q.push(q.front());
+    q.pop();
   }
 
   cout << q.front() << "\n";
