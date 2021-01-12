@@ -32,6 +32,7 @@ int main()
   
   for(int i=0; i<map.size(); ++i)
   {
+    // 미리 0으로 fill하고 지정된 인덱스에 값 삽입을 해도 될 듯.
     sort(map[i].begin(), map[i].end());
   }
 
@@ -55,19 +56,21 @@ void dfs(int V)
 void bfs(int V)
 {
   visitBFS[V] = true;
-  cout << V << " ";
-
-  for(int i=0; i<map[V].size(); ++i)
-  {
-    if(!visitBFS[map[V][i]])
-      q.push(map[V][i]);
-  }
-
+  q.push(V);
+  
   while(!q.empty())
   {
-    int front = q.front();
+    V = q.front();
     q.pop();
-    if(!visitBFS[front])
-      bfs(front);
+
+    cout << V << " ";
+
+    for(int i=0; i<map[V].size(); ++i)
+    {
+      if(visitBFS[map[V][i]]) continue;
+      
+      q.push(map[V][i]);
+      visitBFS[map[V][i]] = true;
+    }
   }
 }
