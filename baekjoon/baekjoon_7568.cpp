@@ -23,7 +23,11 @@ int main()
       if(iter == iter_)
         continue;
 
-      if(iter->first >= iter_->first || iter->second >= iter_->second) --count;
+      if(iter->first >= iter_->first || iter->second >= iter_->second) --count; 
+      /* 
+        같은 경우에도 순위를 내려야 함.
+        if(iter->first > iter_->first || iter->second > iter_->second) --count;  -----> 실패 
+      */
     }
 
     cout << count << " ";
