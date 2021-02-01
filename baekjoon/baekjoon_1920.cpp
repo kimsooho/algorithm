@@ -27,7 +27,7 @@ int main()
   while (M--)
   {
     cin >> input;
-    cout << search(input) << "\n";
+    cout << binary_search(v.begin(), v.end(), input) << "\n";
   }
 }
 
