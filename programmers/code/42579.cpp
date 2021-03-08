@@ -2,6 +2,7 @@
 #include <map>
 #include <queue>
 #include <algorithm>
+#include <string>
 
 using namespace std;
 
