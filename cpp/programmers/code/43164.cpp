@@ -21,7 +21,8 @@ int main()
 {
   // {{"ICN", "B"}, {"B", "C"}, {"C", "ICN"}, {"ICN", "D"}, {"ICN", "E"}, {"E", "F"}}
   // {{"ICN", "B"}, {"ICN", "C"}, {"C", "D"}, {"D", "ICN"}};
-  vector<vector<string>> tickets = {{"ICN", "B"}, {"B", "C"}, {"C", "ICN"}, {"ICN", "D"}, {"ICN", "E"}, {"E", "F"}};
+  //{{"ICN", "B"}, {"B", "ICN"}, {"ICN", "A"}, {"A", "D"}, {"D", "A"}};
+  vector<vector<string>> tickets = {{"ICN", "B"}, {"B", "ICN"}, {"ICN", "A"}, {"A", "D"}, {"D", "A"}};
   vector<string> v = solution(tickets);  
 
   for(string val : v)
