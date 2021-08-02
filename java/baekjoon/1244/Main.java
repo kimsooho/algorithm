@@ -31,8 +31,7 @@ public class Main {
 
         switchs[switchNum] = (~switchs[switchNum]) & 1;
         while (start > 0 && end < switchs.length && switchs[start] == switchs[end]) {
-          switchs[start] = (~switchs[start--]) & 1;
-          switchs[end] = (~switchs[end++]) & 1;
+          switchs[end++] = switchs[start] = (~switchs[start--]) & 1;          
         }
       }
     }
