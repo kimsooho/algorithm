@@ -42,10 +42,7 @@ public class Solution {
   static Pair[] pair;
   static ArrayList<ArrayList<Info>> map;
   static boolean[] visited;
-
   static PriorityQueue<Info> pq;
-
-  static long[] weights;
 
   public static void main(String[] args) throws IOException {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -56,7 +53,6 @@ public class Solution {
       pair = new Pair[N];
       map = new ArrayList<ArrayList<Info>>();
       visited = new boolean[N];
-      weights = new long[N];
       pq = new PriorityQueue<Info>();
       for (int i = 0; i < N; ++i) {
         map.add(new ArrayList<Info>());
@@ -71,7 +67,6 @@ public class Solution {
 
       double E = Double.parseDouble(br.readLine());
       for (int i = 0; i < N; ++i) {
-        weights[i] = Long.MAX_VALUE;
         for (int j = i + 1; j < N; ++j) {
           long distance = (long) (Math.pow(pair[i].x - pair[j].x, 2) + Math.pow(pair[i].y - pair[j].y, 2));
           map.get(i).add(new Info(j, distance));
