@@ -1,3 +1,11 @@
+
+/**
+ * @author suho kim
+ * @no 1068
+ * @title 트리
+ * @url https://www.acmicpc.net/problem/1068
+ * @date 2021.09.10
+ */
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
