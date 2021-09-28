@@ -33,12 +33,11 @@ public class Solution {
       for (int i = 1; i < N; ++i) {
         dp[i] = 1;
         for (int j = 0; j < i; ++j) {
-          if (arr[i] > arr[j] && dp[j] + 1 > dp[i]) {
-            dp[i] = dp[j] + 1;
+          if (arr[i] > arr[j]) {
+            dp[i] = Math.max(dp[i], dp[j] + 1);
           }
         }
-        if (maxValue < dp[i])
-          maxValue = dp[i];
+        maxValue = Math.max(maxValue, dp[i]);
       }
 
       System.out.println(String.format("#%d %d", t, maxValue));
