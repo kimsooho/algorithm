@@ -36,7 +36,6 @@ int main()
   cin >> N >> virusLimit;
 
   map.resize(N);
-  isSelected.resize(N);
   for (int i = 0; i < N; ++i)
   {
     for (int j = 0; j < N; ++j)
@@ -49,6 +48,7 @@ int main()
       }
     }
   }
+  isSelected.resize(positions.size());
 
   Sol();
   std::cout << (retValue == INT16_MAX / 2 ? -1 : retValue) << std::endl;
@@ -114,9 +114,10 @@ int Vine()
     visited[row][col] = true;
   }
 
-  int count = 0;
+  int count = -1;
   while (!q.empty())
   {
+    ++count;
     int size = q.size();
     for (int s = 0; s < size; ++s)
     {
@@ -136,8 +137,6 @@ int Vine()
         q.push(make_pair(nextRow, nextCol));
       }
     }
-    if (!q.empty())
-      ++count;
   }
   return IsValid() ? count : INT16_MAX / 2;
 }
