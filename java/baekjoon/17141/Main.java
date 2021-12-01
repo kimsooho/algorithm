@@ -1,3 +1,11 @@
+
+/**
+ * @author suho kim
+ * @no 17171
+ * @title 연구소 2
+ * @url https://www.acmicpc.net/problem/17141
+ * @date 2021.12.01
+ */
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
